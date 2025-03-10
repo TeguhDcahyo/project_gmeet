@@ -48,6 +48,7 @@ class MeetingResource extends Resource
     public static function table(Tables\Table $table): Tables\Table
     {
         return $table
+            ->query(Meeting::whereRaw('CONCAT(date, " ", end_time) > NOW()'))
             ->columns([
                 TextColumn::make('title')->label('Judul Meeting')->sortable(),
                 TextColumn::make('date')->label('Tanggal')->date(),

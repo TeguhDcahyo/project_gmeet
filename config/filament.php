@@ -92,6 +92,7 @@ return [
             'tenant' => true,
             'resources' => [
                 App\Filament\Resources\MeetingResource::class,
+                App\Filament\Resources\HistoryMeetingResource::class,
             ],
         ],
         'app' => [
@@ -99,6 +100,7 @@ return [
             'tenant' => true,
             'resources' => [
                 App\Filament\App\Resources\MeetingResource::class,
+                App\Filament\App\Resources\HistoryMeetingResource::class,
             ],
         ],
     ],

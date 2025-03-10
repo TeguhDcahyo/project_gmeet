@@ -17,5 +17,13 @@ class Meeting extends Model
         'notification',
         'description',
         'participants',
+        'recording_url',
     ];
+
+    // Cek apakah meeting sudah selesai
+    public function isFinished(): bool
+    {
+        $endDateTime = Carbon::parse("{$this->date} {$this->end_time}");
+        return $endDateTime->isPast();
+    }
 }

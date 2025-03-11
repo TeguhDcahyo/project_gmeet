@@ -17,3 +17,4 @@ class ListMeetings extends ListRecords
         ];
     }
 }
+

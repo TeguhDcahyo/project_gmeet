@@ -23,9 +23,11 @@ class HistoryMeetingResource extends Resource
     protected static ?string $label = 'Riwayat Meeting';
 
     public static function table(Tables\Table $table): Tables\Table
-    {
-        return $table
-        ->query(Meeting::whereRaw("STR_TO_DATE(CONCAT(date, ' ', end_time), '%Y-%m-%d %H:%i:%s') < NOW()"))
+{
+    return $table
+    ->query(Meeting::query()->whereRaw(
+        "STR_TO_DATE(CONCAT(date, ' ', end_time), '%Y-%m-%d %H:%i:%s') < NOW()"
+    ))
         ->columns([
             TextColumn::make('title')
                 ->label('Judul Meeting')
@@ -47,10 +49,10 @@ class HistoryMeetingResource extends Resource
                 ->html(),
         ])
         ->actions([
-            Tables\Actions\EditAction::make() // Hanya edit URL rekaman di History Meeting
+            Tables\Actions\EditAction::make()
                 ->label('Tambah Rekaman'),
         ]);
-    }
+}
 
     public static function form(Form $form): Form
 {

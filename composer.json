@@ -7,9 +7,11 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "chrisreedio/socialment": "^3.9",
         "filament/filament": "^3.3",
         "laravel/framework": "^11.31",
         "laravel/tinker": "^2.9",
+        "socialiteproviders/google": "^4.1",
         "solution-forest/filament-access-management": "^2.2",
         "spatie/laravel-multitenancy": "^4.0"
     },

@@ -59,6 +59,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentAccessManagementPanel::make(),
+                \ChrisReedIO\Socialment\SocialmentPlugin::make()
+                ->registerProvider('google', 'fab-google', 'Google'),
             ]);
     }
 }
